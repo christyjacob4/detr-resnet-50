@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  object_detection:
+    build: 
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app/main.py:/usr/src/code/app/main.py
+      - ./requirements.txt:/usr/src/code/requirements.txt
+    environment: 
+      - FLASK_APP=app/main.py
